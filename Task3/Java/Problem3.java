@@ -35,13 +35,17 @@ Only one valid answer exists.
 class Solution {
     public int[] twoSum(int[] nums, int target) {
         int n = nums.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
-                }
+        int t =0;
+    
+        while(n>=0 && t<=n )
+        {
+            int  val=nums[t];
+            if(target-val == nums[n]){
+             return new int[] {t,n};
+             }
+             t++;
             }
-        }
+
         return new int[]{}; // No solution found
     }
 }
