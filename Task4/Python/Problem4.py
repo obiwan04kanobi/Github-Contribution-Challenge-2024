@@ -23,11 +23,20 @@ Each string does not contain leading zeros except for the zero itself.
 
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        num1 = int(a, 2)
-        num2 = int(b, 2)
+        result =" "
+        carry  = 0
+        i = len(a) - 1 
+        j = len(b) - 1
         
-        result = num1 + num2
-
-        result_binary = bin(result)[2:]
+        while i >= 0 or j >=0 or carry:
+            digit_sum = carry
+            if i >= 0:
+                digit_sum += int(a[i])
+                i -= 1
+            if j >= 0:
+                digit_sum += int(b[j])
+                j -=1
         
-        return result_binary
+            result = str(digit_sum%2)+result
+            carry = digit_sum//2
+        return result
