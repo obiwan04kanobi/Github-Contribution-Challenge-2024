@@ -39,6 +39,7 @@ s1 and s2 consist of lowercase English letters.
 
 #Complete given code, not need to change class name and method name.
 
-class Solution:
+"class Solution:
     def isScramble(self, s1: str, s2: str) -> bool:
-        return 1
+        return 1"
+
