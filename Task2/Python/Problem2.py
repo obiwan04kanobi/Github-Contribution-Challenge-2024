@@ -45,3 +45,5 @@ class Solution:
             digits[-1] = 0
             digits[0:-1] == self.plusOne(digits[0:-1])
             returns digit
+        
+"123"
