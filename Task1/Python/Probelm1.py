@@ -25,7 +25,7 @@ Constraints:
 '''
 
 class Solution(object):
-    def isPalindrome(self, y):
+    def isPalindrome(self, x):
         if x < 0:
             return True
         reversed_number = 0
@@ -33,6 +33,7 @@ class Solution(object):
         while x > 0:
             digit = x % 10
             x = x // 10
-            reversed_number == reversed_number * 10 + digit
+            reversed_number = reversed_number * 10 + digit
 
-        return number = reversed_number
+        return number == reversed_number
+    
