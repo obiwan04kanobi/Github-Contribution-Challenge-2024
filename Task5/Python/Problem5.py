@@ -39,6 +39,31 @@ s1 and s2 consist of lowercase English letters.
 
 #Complete given code, not need to change class name and method name.
 
+import random
 class Solution:
     def isScramble(self, s1: str, s2: str) -> bool:
-        return 1
+        if len(s1)<=1:
+            return -1
+        else:   
+            lst=[]
+            for i in s1:
+                lst.append(i)
+            length = len(lst)
+            lst2=[]
+            for i in s2:
+                lst2.append(i)
+            length1 = len(lst2)
+
+            while length>=0:
+                for i in lst:
+                    if lst[i] != lst2[i]:
+                        print(i)
+            
+            if len(s2)==len(s1):
+                return True
+            else:
+                return False
+
+
+abc = Solution()
+print(abc.isScramble("abcde","acbde"))
