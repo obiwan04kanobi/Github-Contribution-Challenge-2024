@@ -39,4 +39,10 @@ class Solution:
             for j in range(i + 1, n):
                 if nums[i] + nums[j] == target:
                     return [i, j]
-        return []
+        return [i,j]
+    
+c = Solution()
+lis = [2,7,11,15]
+print(c.twoSum(lis,9))
+print(c.twoSum([3,2,4],6))
+print(c.twoSum([3,3],6))

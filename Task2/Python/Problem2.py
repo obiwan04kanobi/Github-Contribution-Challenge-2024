@@ -35,13 +35,15 @@ digits does not contain any leading 0's.
 '''
 
 class Solution:
-    def plusOne(self, digit: List[int]) -> List[int]:
-        if digit[-1] < 9:
-            digits[-1] += 1
-            returns digit
-        elseif len(digits) == 1 and digits[0] == 9:
-            return [1, 0]
-        else:
-            digits[-1] = 0
-            digits[0:-1] == self.plusOne(digits[0:-1])
-            returns digit
+    def plusOne(self, digits):
+        for i in range(len(digits)-1,-1,-1):
+            if digits[i] ==9:
+                digits[0]=0
+            else:
+                digits[i]+= 1
+                return digits
+        return [1] +digits
+    
+sol = Solution()
+print(sol.plusOne([1,2,3]))
+print(sol.plusOne([4,3,2,1]))
