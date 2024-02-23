@@ -32,11 +32,23 @@ Only one valid answer exists.
 #Given code has time complexity of O(n2) come up with a code that has time complexity less than O(n2).
 #Do not need to change class name and method name.
 from typing import List
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        n = len(nums)
-        for i in range(n - 1):
-            for j in range(i + 1, n):
-                if nums[i] + nums[j] == target:
-                    return [i, j]
+        num_dict = {}  # Dictionary to store numbers and their indices
+
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in num_dict:
+                return [num_dict[complement], i]
+            num_dict[num] = i
+
         return []
+
+input_nums = input('nums =')
+nums = list(map(int, input_nums.split()))
+
+input_target = int(input("target ="))
+solution = Solution()
+result = solution.twoSum(nums, input_target)
+print(result)
