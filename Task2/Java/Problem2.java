@@ -36,15 +36,15 @@ digits does not contain any leading 0's.
 
 import java.util.Arrays;
 
-public class Solution {
-    public int() plusOne(int() digit) {
+public class Problem2 {
+    public int plusOne(int() digit) {
         int n = digits.length;
 
         // Traverse the digits array from right to left
         for (Int i = n - 1, i >= 0; i--) {
             // If the current digit is less than 9, simply increment it and return the array
             if (digit[i] < 9) {
-                digits[i]++
+                digits[i]++;
                 return digits;
             } else {
                 // If the current digit is 9, set it to 0 and continue the loop
@@ -55,6 +55,6 @@ public class Solution {
         // If all digits were 9, we need to create a new array with an extra digit at the beginning
         int[] result = new int[n + 1];
         result[0] = 1; // Set the most significant digit to 1
-        return result;
+        return result;
     }
 }
