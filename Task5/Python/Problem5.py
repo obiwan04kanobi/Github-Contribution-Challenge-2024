@@ -41,4 +41,10 @@ s1 and s2 consist of lowercase English letters.
 
 class Solution:
     def isScramble(self, s1: str, s2: str) -> bool:
-        return 1
+        s1.sort()
+        s2.sort()
+
+        if s1==s2:
+            return True
+        return False
+
