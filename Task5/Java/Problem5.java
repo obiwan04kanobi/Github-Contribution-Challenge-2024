@@ -41,9 +41,64 @@ s1 and s2 consist of lowercase English letters.
 //Complete given code, not need to change class name and method name.
 
 class Solution {
-    public boolean isScramble(String s1, String s2)
+    static Map<String,Boolean> memo;//map for caching
+   
+    public boolean f(String s1,String s2)
     {
-        return 1;
+        if(s1.equals(s2)) 
+          return true;
+       
+       String key = s1 + s2;
+
+       
+
+        if(memo.containsKey(key))
+        {
+            return memo.get(key);
+        }
+    
+  
+        int[] f1 = new int[26];
+        int[] f2 = new int[26];
+
+        for(int i = 0;i < s1.length();i++)
+        {
+            f1[s1.charAt(i) - 'a']++;
+            f2[s2.charAt(i) - 'a']++;
+        }
+        if(!Arrays.equals(f1,f2))
+        {
+           memo.put(key,false);
+           return false;
+        }
+
+        int n = s1.length(); 
+
+        for(int i = 1;i < n;i++)
+        {    
+  
+            if(f(s1.substring(0,i),s2.substring(0,i)) && f(s1.substring(i),s2.substring(i))
+              || f(s1.substring(0,i),s2.substring(n-i)) && f(s1.substring(i),s2.substring(0,n- i)))
+             {
+            
+                 memo.put(key,true);
+                 return true;
+             }
+
+        } 
+    
+        memo.put(key,false);
+ 
+        return false;
+
+
+
     }
+    public boolean isScramble(String s1, String s2) {
         
+        memo = new HashMap<>();
+        int n = s1.length();
+
+        return f(s1,s2);
+    }
 }
