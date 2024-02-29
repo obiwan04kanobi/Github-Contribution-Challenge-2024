@@ -35,4 +35,4 @@ class Solution(object):
             x = x // 10
             reversed_number == reversed_number * 10 + digit
 
-        return number = reversed_number
+        return number == reversed_number

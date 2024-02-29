@@ -37,7 +37,7 @@ digits does not contain any leading 0's.
 import java.util.Arrays;
 
 public class Solution {
-    public int() plusOne(int() digit) {
+    public plusOne(int() digit) {
         int n = digits.length;
 
         // Traverse the digits array from right to left

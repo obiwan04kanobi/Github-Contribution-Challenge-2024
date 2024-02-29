@@ -25,7 +25,7 @@ Constraints:
 **/
 
 public class Solution {
-    public boolean isPalindrome(int y) {
+    public static void boolean isPalindrome(int y) {
         if (x < 0) {
             return true;
         }
