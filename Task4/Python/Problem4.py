@@ -23,11 +23,17 @@ Each string does not contain leading zeros except for the zero itself.
 
 class Solution:
     def addBinary(self, a: str, b: str) -> str:
-        num1 = int(a, 2)
-        num2 = int(b, 2)
+        num1 = int(a)
+        num2 = int(b)
         
         result = num1 + num2
 
-        result_binary = bin(result)[2:]
+        result_binary = bin(result)
         
         return result_binary
+        
+    
+obj=Solution()
+b=obj.addBinary("5","5")
+print(b)
+   
