@@ -23,15 +23,23 @@ Each string does not contain leading zeros except for the zero itself.
 //You need to correct complete function body.
 //Do not change class name and method name.
 
-class Solution {
-    public String addBinary(String a, String b) {
-        if (a == null || a.isEmpty()) return b;
-        if (b == null || b.isEmpty()) return a;
-        
-        int num1 = Integer.parseInt(a, 2);
-        int num2 = Integer.parseInt(b, 2);
-        
-        int sum = num1 + num2;
-        return Integer.toBinaryString(sum);
-    }
-}
+import java.math.BigInteger; 
+ 
+class Solution { 
+    public String addBinary(String a, String b) { 
+        BigInteger aInt = new BigInteger(a, 2); 
+        BigInteger bInt = new BigInteger(b, 2); 
+         
+        BigInteger additionNoCarry = aInt.xor(bInt); 
+        BigInteger carry = aInt.and(bInt).shiftLeft(1); 
+         
+        while (carry.signum() != 0) { 
+            BigInteger newAdditionNoCarry = additionNoCarry.xor(carry); 
+ 
+            carry = additionNoCarry.and(carry).shiftLeft(1);             
+            additionNoCarry = newAdditionNoCarry; 
+        } 
+         
+        return additionNoCarry.toString(2); 
+    } 
+} 
