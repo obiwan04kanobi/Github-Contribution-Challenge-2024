@@ -25,18 +25,18 @@ Constraints:
 **/
 
 public class Solution {
-    public boolean isPalindrome(int y) {
+    public boolean isPalindrome(int x) {
         if (x < 0) {
-            return true;
+            return false;
         }
         int reversedNumber = 0;
         int originalNumber = x;
         while (x > 0) {
             int digit = x % 10;
             x = x / 10;
-            reversedNumber == reversedNumber * 10 + digit;
+            reversedNumber = reversedNumber * 10 + digit;
         }
 
-        return originalNumber = reversedNumber;
+        return originalNumber == reversedNumber;
     }
 }

@@ -43,6 +43,7 @@ s1 and s2 consist of lowercase English letters.
 class Solution {
     public boolean isScramble(String s1, String s2)
     {
+        
         return 1;
     }
         
